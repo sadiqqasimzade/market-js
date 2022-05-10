@@ -51,6 +51,7 @@ btnaddcontainer.addEventListener('click', () => {
     containersdiv.appendChild(container);
 })
 
+
 //modals
 btnadd.addEventListener('click', () => {
     modal.style.display = "flex";
@@ -77,28 +78,32 @@ btncancel.addEventListener('click', () => { clearInputs() })
 //btnok
 btnok.addEventListener('click', () => {
     if (checkInputs()) {
-        product = document.createElement('div')
-        product.setAttribute("draggable", "true")
-        product.setAttribute("price", price.value)
-        product.setAttribute("data-id", producttype.value)
-        product.innerText = productname.value;
-        product.classList.add("product");
-        product.addEventListener("dragstart", function () {
-            currentProduct = this;
-        })
-        product.classList.add("tooltip")
-
-        tooltip = document.createElement('span');
-        tooltip.classList.add("tooltiptext")
-        tooltip.innerText = `Price: ${price.value}`;
-
-        product.appendChild(tooltip);
-        maincontainer.appendChild(product);
-
-        clearInputs()
-        modal.style.display = "none";
+        createproduct(price.value, producttype.value, productname.value)
     }
 })
+
+function createproduct(price, producttype, productname) {
+    product = document.createElement('div')
+    product.setAttribute("draggable", "true")
+    product.setAttribute("price", price)
+    product.setAttribute("data-id", producttype)
+    product.innerText = productname;
+    product.classList.add("product");
+    product.addEventListener("dragstart", function () {
+        currentProduct = this;
+    })
+    product.classList.add("tooltip")
+
+    tooltip = document.createElement('span');
+    tooltip.classList.add("tooltiptext")
+    tooltip.innerText = `Price: ${price}`;
+
+    product.appendChild(tooltip);
+    maincontainer.appendChild(product);
+
+    clearInputs()
+    modal.style.display = "none";
+}
 
 
 //main container drag
@@ -141,3 +146,9 @@ function clearInputs() {
     btnok.innerText = "Ok";
 }
 
+//
+
+createproduct(11.1, "alma", "qirmizi-alma")
+createproduct(11.2, "alma", "yasil-alma")
+createproduct(11.3,"armud" , "armud")
+createproduct(11.4, "random-fruit", "random-fruit-name")
