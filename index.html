@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body id="body">
+
+
+    <p>Hint:Hover Over Products To See Prices</p>
+    <p>Use Add to Add Products</p>
+    <div class="df ">
+        
+        <div class="mainbox" id="maincontainer" data-target="">
+           
+        </div>
+        <div>
+            <button id="btnaddcontainer">Add Container</button>
+            <button class="ml5" id="btncalcl">Calculate Price</button>
+            <div class="ml10">
+                <button id="add">Add</button>
+                <div style="display: none;" id="modal" class="modal jcc aic">
+                    <form id="form" action="" class="ml10 jcc aic modal-content">
+                        <span id="close" class="close">&times;</span>
+                        <label for="productname">Product Name</label>
+                        <input required type="text" autocomplete="off" id="productname">
+                        <br>
+                        <label for="producttype">Product Type</label>
+                        <input required type="text" autocomplete="off" id="producttype">
+                        <br>
+                        <label for="price">Price</label>
+                        <input required type="number" autocomplete="off" min="0" id="price">
+                        <br>
+                        <button type="button" id="cancel">Cancel</button>
+                        <button type="button" id="ok">Ok</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containers" id="containers">
+
+    </div>
+
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
